@@ -40,7 +40,7 @@ articlesRouter
       .then(article => {
         res
           .status(201)
-          .location(`/articles/${article.id}`)
+          .location(req.originalUrl + `/${article.id}`)
           .json(serializeArticle(article))
       })
       .catch(next)
